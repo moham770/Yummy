@@ -21,7 +21,7 @@ $(document).ready(() => {
   $("#search").click(() => {
     $("#searchArea").removeClass("d-none");
     ready()
-    closeSideBar();
+
     hideHomePage();
     hideCategory();
     hideIngredientSection()
@@ -33,7 +33,7 @@ $(document).ready(() => {
   $("#form").click(() => {
     $("#contact-Us-area").toggleClass("d-none");
     ready()
-    closeSideBar();
+
     hideCategory();
     hideSearchArea();
     hideAreaSection()
@@ -41,9 +41,10 @@ $(document).ready(() => {
     hideHomePage()
   });
 //! display category
+
+
   $("#category").click(() => {
-    $("#categoryHtml").toggleClass("d-none");
-    closeSideBar();
+    $("#categoryHtml").removeClass("d-none");;
     ready()
     form();
     hideSearchArea();
@@ -61,12 +62,11 @@ $("#Area").click(()=>{
   form()
   hideSearchArea()
   hideIngredientSection()
-  hideAreaSection()
+ 
 })
 $("#ingredient").click(()=>{
   $("#Ingredients").removeClass("d-none")
   ready()
-  closeSideBar();
   form()
   hideCategory()
   hideHomePage()
@@ -96,10 +96,7 @@ $("#ingredient").click(()=>{
       });
     }
   }
-  function closeSideBar() {
-    $("#sideBar").animate({ left: `-${sideBarWidth}` }, 500);
-    $(".sideBar-Icon-Toggle").html(` <i class="fa-solid open-close-icon  fa-align-justify"></i>`);
-  }
+  
 
   function hideCategory() {
     $("#categoryHtml").addClass("d-none");

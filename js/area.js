@@ -1,6 +1,6 @@
 // ==========>HTML ELEMENTS
 
-let Area = document.getElementById("Area")
+let areaSection = document.getElementById("areaSection")
 let areaSectionContainer = document.getElementById("areaSectionContainer")
 // ===========================>Functions
 

@@ -109,8 +109,8 @@ meals.map((meal)=>{
 
 
     ingredientsContainer.innerHTML =`
-    <div class="col-md-4 text-white">
-    <div class="mealDescImg rounded-2 overflow-hidden ">
+    <div class="col-md-4 text-white ingredientsCol">
+    <div class="mealDescImg rounded-2 overflow-hidden  ">
     <img src="${meal.strMealThumb}" class="w-100" alt="" srcset="">
     </div>
     <h2>${meal.strMeal}</h2>

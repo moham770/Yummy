@@ -26,18 +26,16 @@ $(document).ready(() => {
     hideCategory();
     hideIngredientSection()
     hideAreaSection()
+
+    
   });
-
-
-
-
   //! display Form
   $("#form").click(() => {
     $("#contact-Us-area").toggleClass("d-none");
     ready()
     closeSideBar();
-    hideSearchArea();
     hideCategory();
+    hideSearchArea();
     hideAreaSection()
     hideIngredientSection()
     hideHomePage()
@@ -46,10 +44,11 @@ $(document).ready(() => {
   $("#category").click(() => {
     $("#categoryHtml").toggleClass("d-none");
     closeSideBar();
-    form();
-    hideHomePage();
-    hideSearchArea();
     ready()
+    form();
+    hideSearchArea();
+    hideAreaSection()
+    hideHomePage();
     hideIngredientSection()
   });
 
@@ -62,15 +61,17 @@ $("#Area").click(()=>{
   form()
   hideSearchArea()
   hideIngredientSection()
+  hideAreaSection()
 })
 $("#ingredient").click(()=>{
   $("#Ingredients").removeClass("d-none")
-  form()
   ready()
+  closeSideBar();
+  form()
   hideCategory()
   hideHomePage()
   hideAreaSection()
-  closeSideBar();
+  hideSearchArea()
 })
 
 

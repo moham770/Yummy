@@ -82,6 +82,14 @@ function showDescriptionMealInHomePage(index){
         </div>
     
     `
+    let sourceBtn =document.getElementById('sourceBtn')
+    sourceBtn.addEventListener("click",()=>{
+     open(selectedMeal.strSource)
+    })
+    let youtubeBtn = document.getElementById('youtubeBtn')
+    youtubeBtn.addEventListener('click',()=>{
+      open(selectedMeal.strYoutube)
+    })
 }
 
 

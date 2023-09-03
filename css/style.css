@@ -261,12 +261,13 @@ body{
 @media screen and (max-width:768px) {
     .container {
         padding-left: 75px !important;
+        padding-right: 15px !important;
        
     }
 }
 @media screen and (max-width:400px) {
     .container {
         padding-left: 80px !important;
-       
+       padding-right: 20px !important;
     }
 }

@@ -76,7 +76,6 @@ $("#ingredient").click(()=>{
 
 
 
-
   // *====================>Functions
   //todo:Open and close sideBar with animation
   function ready() {
@@ -124,4 +123,9 @@ $("#ingredient").click(()=>{
   function hideIngredientSection(){
     $("#Ingredients").addClass('d-none')
   }
+
+
 });
+
+
+

@@ -1,10 +1,12 @@
 $(document).ready(() => {
-  $(".sk-chase").fadeOut(()=>{
-    $("#loading").slideUp(()=>{
-      $("body").css("overflow", "visible");
-    })
+  let loading = document.getElementById("loading")
+  
+  // $(".sk-chase").fadeOut(()=>{
+  //   $("#loading").slideUp(()=>{
+  //     $("body").css("overflow", "visible");
+  //   })
     
-  });
+  // });
 
 
   //*===========================================>App Variables

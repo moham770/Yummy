@@ -3,8 +3,11 @@ let category = document.getElementById("category")
 let categoryContainer = document.getElementById("categoryContainer")
 
 async function categoryData(){
+  loading.classList.remove("d-none")
   let res = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
   let data = await res.json()
+  loading.classList.add("d-none")
+
 
 
 displayAllCategory(data.categories)
@@ -45,8 +48,11 @@ getCategorySelect(categoriesArr[index].strCategory)
 
 
 async function getCategorySelect(catName){
+  loading.classList.remove("d-none")
+
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${catName}`)
 let data = await res.json()
+loading.classList.add("d-none")
 
 displayMealsFromSelectCategory(data.meals)
 
@@ -80,8 +86,11 @@ function getmealName(index){
 }
 
 async function getCategoryByName(namemealForCategory){
+  loading.classList.remove("d-none")
+
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${namemealForCategory}`)
 let data = await res.json()
+loading.classList.add("d-none")
 displayDescriptionMeal(data.meals)
 }
 

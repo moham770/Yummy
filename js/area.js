@@ -5,8 +5,12 @@ let areaSectionContainer = document.getElementById("areaSectionContainer")
 // ===========================>Functions
 
 async function getAria(){
+  loading.classList.remove("d-none")
+
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
 let data = await res.json() 
+loading.classList.add("d-none")
+
 displayAreas(data.meals)
 }
 let allArea
@@ -33,8 +37,12 @@ const selectedArea =allArea[index]
 getMealsForSelectedarea(allArea[index].strArea)
 }
 async function getMealsForSelectedarea(mealsforSelectedCountry){
+  loading.classList.remove("d-none")
+
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${mealsforSelectedCountry}`)
 let data = await res.json()
+loading.classList.add("d-none")
+
 displayMealsForSelectedCountry(data.meals)
 }
 let allmeals
@@ -62,15 +70,15 @@ const mealId =allmeals[index].idMeal;
 getDescriptionMealById(mealId)
 }
 async function getDescriptionMealById(mealId){
+  loading.classList.remove("d-none")
+
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
 let data = await res.json()
+loading.classList.add("d-none")
+
 displayDescriptionMealInAreaSection(data.meals)
 }
 function displayDescriptionMealInAreaSection(meals){
-    
-
-
-
     meals.map((meal)=>{
 
         let recipes= ""
@@ -81,9 +89,7 @@ function displayDescriptionMealInAreaSection(meals){
             recipes+=`<li> ${meal[strMeasure]}  ${meal[strIngredient]}</li>`
           }    
         }
-
-
-        
+   
         let tagHtml=""
         if(meal.strTags !=null ){
           let tags= meal.strTags.split(`,`) 
@@ -135,17 +141,6 @@ function displayDescriptionMealInAreaSection(meals){
    
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

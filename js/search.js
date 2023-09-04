@@ -11,9 +11,11 @@ let searchInputs =document.getElementById('searchInputs')
 
 // *====>Search By Name <================//
 async function searchByName(value){
+  loading.classList.remove("d-none")
 let res =await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
 if(res.status != 200) return
 let data = await res.json()
+loading.classList.add("d-none")
 displayMealsInSearchPage(data.meals)
 }
 let searchMeal
@@ -106,9 +108,11 @@ if(inputFristLatter.value =""){
 //*===============================>Search By Frist Latter <================================================================//
 
 async function searchByFristChar(value){
+  loading.classList.remove("d-none")
   let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${value}`)
 if(res.status != 200) return
   let data = await  res.json()
+  loading.classList.add("d-none")
   displayMealsByFristChar(data.meals)
 }
 let mealsSearchFristLatter

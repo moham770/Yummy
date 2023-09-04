@@ -8,11 +8,12 @@ let ingredientsContainer = document.getElementById("ingredientsContainer")
 // *=================>Functions
 
 async function getAllIngredients(){
+  loading.classList.remove("d-none")
 let res = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
 let data = await res.json()
 const Ingredientdata =data.meals
 const finalData= Ingredientdata.slice(0,20)
-
+loading.classList.add("d-none")
 displayAllIngredients(finalData)
 }
 
@@ -23,7 +24,7 @@ function displayAllIngredients(allIngredients){
      allIngredients.map((ingred,index)=>{
         let lengthDesc =ingred.strDescription.indexOf(".")
         IngredHtml+=`
-        <div class="col-lg-3 col-md-4" onclick="selecetKindOfMeals(${index})">
+        <div class="col-lg-3 col-md-4 text-center" onclick="selecetKindOfMeals(${index})">
         <div class="ingredient-item">
           <div class="ingredient-icon">
             <i class="fa-solid fa-drumstick-bite fa-4x"></i>
@@ -44,9 +45,10 @@ function selecetKindOfMeals(index){
     getMealsForIngredient(nameOfIngredient)
 }
 async function getMealsForIngredient(nameOfIngredient){
+  loading.classList.remove("d-none")
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${nameOfIngredient}`)
     let data = await res.json()
-    
+  loading.classList.add("d-none")
     displayMealsForIngredient(data.meals)
 }
 let SelectedMealArray
@@ -79,8 +81,10 @@ getDesMealByIdForIngredients(idMeal)
 
 
 async function getDesMealByIdForIngredients(idMeal){
+  loading.classList.remove("d-none")
     let res= await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
     let data = await res.json()
+  loading.classList.add("d-none")
     displayDescMealForIngredient(data.meals)
 }
 

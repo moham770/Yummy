@@ -4,9 +4,11 @@ let homePage = document.getElementById("homePage");
 
 // =======> Functions
 async function getHomeData(){    
+  loading.classList.remove("d-none")
 let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
 if(res.status !=200) return
 let data = await res.json()
+loading.classList.add("d-none")
 
 displayMealsinHomePage(data.meals)
 }
